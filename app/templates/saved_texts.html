@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block saved_texts %}
+
+{% if texts %}
+<div class="dropdown text-center m-3">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+        aria-expanded="false">
+        Saved texts
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% for t in texts %}
+        <li>
+            <a href="/{{ t.id }}" class="dropdown-item">{{ t.text|truncate(40) }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<form class=" text-center pt-0 pr-5 pl-5 pb-5">
+    {{ form.text(rows=10, class='form-control') }}
+</form>
+
+{% include "text_keyphrases.html" %}
+
+{% else %}
+<div class="text-center">
+    <p class="h5 m-3"> There are no saved texts </p>
+</div>
+{% endif %}
+
+<script>
+    $('.dropdown-toggle').dropdown()
+    $(document).click(function () {
+        $(".dropdown-menu").removeClass('show');
+    });
+</script>
+
+{% endblock %}

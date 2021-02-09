@@ -1,0 +1,15 @@
+{% if not k.url %}
+    <li class="list-group-item list-group-item-action list-group-item-dark">
+        {{ k.keyphrase }}
+    </li>
+{% elif k.disambiguation %}
+    <a href="{{ k.url }}" target="_blank" rel="noopener noreferrer"
+        class="list-group-item list-group-item-action list-group-item-primary">
+        {{ k.keyphrase }}
+    </a>
+{% elif k.url %}
+    <a href="{{ k.url }}" target="_blank" rel="noopener noreferrer"
+        class="list-group-item list-group-item-action list-group-item-success">
+        {{ k.keyphrase }}
+    </a>
+{% endif %}

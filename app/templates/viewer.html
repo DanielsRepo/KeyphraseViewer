@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block viewer %}
+
+<form class=" text-center pt-5 pr-5 pl-5 pb-1" action="/" method="post">
+    {{ form.csrf_token() }}
+    {{ form.text(rows=10, class='form-control', placeholder="Put text here") }}
+    {{ form.submit(class="btn btn-info my-3 w-50") }}
+</form>
+
+{% include "text_keyphrases.html" %}
+
+{% endblock %}

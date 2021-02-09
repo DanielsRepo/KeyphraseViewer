@@ -1,0 +1,11 @@
+{% if text.keyphrases %}
+<div class="text-center">
+    <hr class="m-0">
+    <p class="h5 m-3"> Keyphrases: </p>
+    <div class="list-group" style="max-height: 220px; overflow-y: scroll;">
+        {% for k in text.keyphrases %}
+            {% include "keyphrase.html" %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

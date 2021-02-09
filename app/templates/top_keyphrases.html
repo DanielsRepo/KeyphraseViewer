@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block top_keyphrases %}
+
+{% if keyphrases %}
+<div class="text-center">
+    <hr class="m-0">
+    <p class="h5 m-3"> Top keyphrases: </p>
+    <div class="list-group">
+        {% for k in keyphrases %}
+        {% include "keyphrase.html" %}
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="text-center">
+    <p class="h5 m-3"> There are no top keyphrases </p>
+</div>
+{% endif %}
+
+
+{% endblock %}

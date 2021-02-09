@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Keyphrase Viewer</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center">
+        <div class="card m-3" style="width: 40rem">
+            <div class="text-center m-3">
+                <a href="/" class="btn btn-outline-info mr-2" id="get_kp" role="button" aria-disabled="true">
+                    Get keyphrases
+                </a>
+                <a href="/top" class="btn btn-outline-info ml-2" id="top_kp" role="button" aria-disabled="true">
+                    Top keyphrases
+                </a>
+                <a href="/saved_texts" class="btn btn-outline-info ml-2" id="saved_texts" role="button"
+                    aria-disabled="true">
+                    Saved texts
+                </a>
+            </div>
+            <hr class="m-0">
+
+            {% block viewer %}{% endblock %}
+            {% block top_keyphrases %}{% endblock %}
+            {% block saved_texts %}{% endblock %}
+
+        </div>
+    </div>
+</body>
+
+</html>
