@@ -20,11 +20,11 @@ def create_app():
 
     # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "app.db")
 
-    user = os.environ["DB_USER"]
-    pwd = os.environ["DB_PASSWORD"]
-    db_name = os.environ["DB_NAME"]
-    host = os.environ["DB_HOST"]
-    port = os.environ["DB_PORT"]
+    user = os.environ["POSTGRES_USER"]
+    pwd = os.environ["POSTGRES_PASSWORD"]
+    host = os.environ["POSTGRES_HOST"]
+    port = os.environ["POSTGRES_PORT"]
+    db_name = os.environ["POSTGRES_DB"]
 
     app.config[
         "SQLALCHEMY_DATABASE_URI"
